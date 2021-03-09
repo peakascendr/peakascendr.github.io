@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FPV Motor Selection</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+</head>
+<body>
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>FPV Motor and Prop Data</h1>
+  <p>A collection of quadcopter reference builds</p> 
+</div>
+<div class="container-fluid">
+<table id="data" class="table table-striped table-bordered table-condensed" width="100%">
+	<thead>
+		<tr>
+		<th>Model</th>
+		<th>Class</th>
+		<th>Prop Diameter</th>
+		<th>Motor Size</th>
+		<th>Motor KV</th>
+		<th>Battery Voltage</th>
+		<th>Battery mAh</th>
+		<th>Dry Weight (g)</th>	
+		<th>Source</th>
+		</tr>
+	</thead>
+</table>
+</div>
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <p>See an error? Want to contribute? <a href="https://github.com/peakascendr/Motor_and_Prop_Data/blob/main/MotorandPropData.json">Submit a pull request</a></p>
+</div>
+</body>
+ <script>
+  $(document).ready(function(){	
+    $('#data').DataTable({
+        ajax: {
+		url : "https://raw.githubusercontent.com/peakascendr/Motor_and_Prop_Data/main/MotorandPropData.json"
+	},
+        columns: [
+            { data: 'Model' },
+            { data: 'Class' },
+		{ data : 'Prop diameter'},
+		{ data :'Motor size' },
+		 { data :'Motor kv' },
+		  { data :'Battery Voltage' },
+		{ data :'Battery mAh' },
+		{ data : 'Dry Weight (g)'},
+		{ data :'Source', "render": function ( data, type, row, meta ) {
+      			return '<a href="'+data+'">source</a>';
+    			} 
+		}
+		
+        ]
+    });
+		
+});
+
+</script>
+</html>
