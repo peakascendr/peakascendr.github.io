@@ -16,18 +16,17 @@
 </div>
 <div class="form-group">
   <form id="data" onsubmit="return make_json(this); return false;" method="post">
-	make: <input type="text" name="make"/><br>
-	model: <input type="text" name="model"/><br>
-	class:  <input type="text" name="class"/><br>
-	batt_v: <input type="text" name="batt_v"/><br>
-	motor_sz: <input type="text" name="motor_sz"/><br>
-  motor_kv: <input type="text" name="motor_kv"/><br>
-  prop_diam: <input type="text" name="prop_diam"/><br>
-  prop_blades: <input type="text" name="prop_blades"/><br>
-  prop_model<input type="text" name="prop_model"/><br>
-	dry_wgt_g:<input type="text" name="dry_wgt_g"/><br>
-	source: <input type="text" name="source"/><br>
-
+	Make: <input type="text" name="make"/><br>
+	Model: <input type="text" name="model"/><br>
+	Class (whoop,freestyle,racing, etc):  <input type="text" name="class"/><br>
+	Battery Size (1S,4S,6S,etc): <input type="text" name="batt_v"/><br>
+	Motor Size (2450,0810,1150,etc): <input type="text" name="motor_sz"/><br>
+  	Motor kv (1800,25000,etc): <input type="text" name="motor_kv"/><br>
+  	Prop Diameter (2",3",5", etc): <input type="text" name="prop_diam"/><br>
+  	Number of Prop Blades (2,3,4,etc): <input type="text" name="prop_blades"/><br>
+  	Prop Model (5030,2025,etc)<input type="text" name="prop_model"/><br>
+  	Dry Weight (g):<input type="text" name="dry_wgt_g"/><br>
+  	Source (http://linktosite.etc): <input type="text" name="source"/><br>
 
 <input type="button" id="button1" value="Format"/>
 </form>
