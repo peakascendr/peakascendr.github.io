@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <title>Motor & Data Entry Formatter</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css"></script>
 </head>
 <body>
 	<div class="jumbotron text-center" style="margin-bottom:0">
@@ -125,10 +125,10 @@
 </body>
 <script>    
     document.getElementById("button1").onclick = function(e){
-    make_json(document.getElementById("data"));
+    make_json();
 }
 
-function make_json(form){
+function make_json(){
     var json={};
     var elements = document.getElementsByClassName("form-control") ;
     for (var i = 0, element; element = elements[i++];) {
@@ -154,6 +154,7 @@ function make_json(form){
     }
     var html = JSON.stringify(json,null,4);
     document.getElementById('output').innerHTML=html;
+    console.log(html)
     return false;
 }
   </script>
