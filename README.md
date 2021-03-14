@@ -11,7 +11,7 @@ If you would like to contribute or see something that needs fixing submit a pull
 
 [This page](https://peakascendr.github.io/entryformatter.html) is to help format your contributions to the correct format 
 
-** Here is a sample json entry: **
+**Here is a sample json entry:**
 
     {
         "make": "iFlight", 
@@ -30,9 +30,10 @@ If you would like to contribute or see something that needs fixing submit a pull
 ### Not familiar with Github or pull requests?
 It's easy:
 * Sign-up for a github account
-* Visit https://github.com/peakascendr/Motor_and_Prop_Data and click "fork" in the upper right of the page.
+* Visit https://github.com/peakascendr/Motor_and_Prop_Data and click ![fork](fork.png?raw=true) in the upper right of the page.
 * Click on the forked 'MotorandPropData.json' file in your account
-* Click on the pencil icon to edit the file and make you edits
-* When done select "Create a new branch for this commit and start a pull request." at the botton and click "Propose changes"
+* Click on the ![pencil](pencil.png?raw=true) icon to edit the file and make you edits
+* When done select "Create a new branch for this commit and start a pull request." at the botton and then click "Propose changes"
+![new branch and propose](pull.png?raw=true)
 
 That's it! Your request will be reviewed and posted. 
