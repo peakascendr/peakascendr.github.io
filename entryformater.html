@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Motor & Data Entry Formatter</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+</head>
+<body>
+  <form id="data" onsubmit="return make_json(this); return false;" method="post">
+	"make": <input type="text" name="make"/><br>
+	"model": <input type="text" name="model"/><br>
+	"class":  <input type="text" name="class"/><br>
+	"batt_v": <input type="text" name="batt_v"/><br>
+	"motor_sz": <input type="text" name="motor_sz"/><br>
+  "motor_kv": <input type="text" name="motor_kv"/><br>
+  "prop_diam": <input type="text" name="prop_diam"/><br>
+  "prop_blades": <input type="text" name="prop_blades"/><br>
+  "prop_model"<input type="text" name="prop_model"/><br>
+	"dry_wgt_g":<input type="text" name="dry_wgt_g"/><br>
+	"source": <input type="text" name="source"/><br>
+   
+</body>
+<script>    
+    document.getElementById("button1").onclick = function(e){
+    make_json(document.getElementById("data"));
+}
+
+function make_json(form){
+    var json={};
+    
+    var elements = form.elements;
+    
+    for (var i = 0, element; element = elements[i++];) {
+    if (element.type == "text" && element.value != ""){
+    		if(!isNaN(element.value)){
+        json[element.name] = Number(element.value);
+        }
+        else{
+        	json[element.name] = element.value;
+        }
+    }
+    }
+    
+    var html = JSON.stringify(json,null,4);
+    document.getElementById('output').innerHTML=html;
+    return false;
+}
+  </script>
+  </html>
