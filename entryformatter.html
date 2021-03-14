@@ -122,8 +122,9 @@
 
 function make_json(form){
     var json={};
-    
     var elements = document.getElementsByClassName("form-control") ;
+    var selects = document.getElementsByClassName("custom-select") ;
+    elements.push(selects) ;
     
     for (var i = 0, element; element = elements[i++];) {
 	    if (element.value != ""){
