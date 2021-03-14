@@ -16,19 +16,95 @@
 </div>
 <div class="form-group">
   <form id="data" onsubmit="return make_json(this); return false;" method="post">
-	Make: <input type="text" name="make"/><br>
-	Model: <input type="text" name="model"/><br>
-	Class (whoop,freestyle,racing, etc):  <input type="text" name="class"/><br>
-	Battery Size (1S,4S,6S,etc): <input type="text" name="batt_v"/><br>
-	Motor Size (2450,0810,1150,etc): <input type="text" name="motor_sz"/><br>
-  	Motor kv (1800,25000,etc): <input type="text" name="motor_kv"/><br>
-  	Prop Diameter (2",3",5", etc): <input type="text" name="prop_diam"/><br>
-  	Number of Prop Blades (2,3,4,etc): <input type="text" name="prop_blades"/><br>
-  	Prop Model (5030,2025,etc)<input type="text" name="prop_model"/><br>
-  	Dry Weight (g):<input type="text" name="dry_wgt_g"/><br>
-  	Source (http://linktosite.etc): <input type="text" name="source"/><br>
+	  <label for="make">Make</label>
+	  <input type="text" class="form-control" id="make" aria-describedby="makeHelp" placeholder="e.g BetaFPV,Armattan,GepRC,etc">
+    	  <small id="msgHelp" class="form-text text-muted">The manufacturer of the craft</small>
+</div>
+<div class="form-group">	  
+	  <label for="model">Model</label>
+	  <input type="text" class="form-control" id="model" aria-describedby="modelHelp" placeholder="e.g Gecko,BangGod,Cidora SL-5">
+    	  <small id="msgHelp" class="form-text text-muted">The manufacturer of the craft</small>
+</div>
+<div class="form-group">	  
+	  <label for="class">Class</label>
+	  <select id="class" class="custom-select" size="3" aria-describedby="classHelp">
+  		<option selected>Freestyle</option>
+  		<option value="Whoop">Whoop</option>
+  		<option value="Toothpick">Toothpick</option>
+  		<option value="Freestyle">Freestyle</option>
+		<option value="Racing">Racing</option>
+		<option value="Long Range">Long Range</option>
+		<option value="Cinematic">Cinematic</option>
+		<option value="Beast">Beast</option>
+	  </select>
+	  <small id="classHelp" class="form-text text-muted">The type of actitivy the craft is built for</small>
+</div>
+<div class="form-group">	 
+	  <label for="batt_v">Battery Size</label>
+	  <select id="batt_v" class="custom-select" size="3" aria-describedby="battvHelp">
+  		<option selected>1S</option>
+  		<option value="1S">1S</option>
+  		<option value="2S">2S</option>
+  		<option value="3S">3S</option>
+		  <option value="4S">4S</option>
+		  <option value="5S">5S</option>
+		  <option value="6S">6S</option>
+		  <option value="7S">7S</option>
+		  <option value="8S">8S</option>
+		  <option value="9S">9S</option>
+		  <option value="10S">10S</option>
+		  <option value="11S">11S</option>
+		  <option value="12S">12S</option>
+	</select>
+	  <small id="battvHelp" class="form-text text-muted">The size of the battery</small>
+</div>
+<div class="form-group">	  
+	<label for="motor_sz">Motor Size</label>
+	  <input type="text" class="form-control" id="motor_sz" aria-describedby="mszHelp" placeholder="e.g 1105,2207,2306,etc">
+    	  <small id="mszHelp" class="form-text text-muted">The stator size of the motor</small> 
+</div>
+<div class="form-group">	
+	<label for="motor_kv">Motor KV</label>
+	  <input type="text" class="form-control" id="motor_kv" aria-describedby="mkvHelp" placeholder="e.g 2400,8000,16500,etc">
+    	  <small id="mkvHelp" class="form-text text-muted">The KV (RPM per Volt) of the motor</small> 	  
+</div>
+<div class="form-group">	  
+	<label for="prop_diam">Prop Size</label>
+	  <input type="text" class="form-control" id="prop_diam" aria-describedby="pdiamHelp" placeholder="e.g 2\",2.5\",5\",etc">
+    	  <small id="pdiamHelp" class="form-text text-muted">The general size of props</small> 
+</div>
+<div class="form-group">							    
+	  <label for="prop_blades">Prop Blades</label>
+	  <select id="prop_blades" class="custom-select" size="3" aria-describedby="bladeHelp">
+  		<option selected>3</option>
+  		<option value="1\"">1"</option>
+  		<option value="2\"">2"</option>
+  		<option value="3\"">3"</option>
+		<option value="4\"">4"</option>
+		<option value="5\"">5"</option>
+		<option value="6\"">6"</option>
+	</select>
+	  <small id="bladeHelp" class="form-text text-muted">The count of the blades on the prop</small> 							    
+</div>
+<div class="form-group">  	
+	<label for="prop_model">Prop Size</label>
+	  <input type="text" class="form-control" id="prop_model" aria-describedby="pmodHelp" placeholder="e.g 2020,5040,5042,etc">
+    	  <small id="pmodHelp" class="form-text text-muted">The 4 number of the prop (5042) equals 5.0"X4.2" </small>
+</div>
+<div class="form-group">
+	<label for="dry_wgt_g">Dry Weight (g)</label>
+	  <input type="text" class="form-control" id="dry_wgt_g" aria-describedby="dryhelp" placeholder="e.g 200,493,505,etc">
+    	  <small id="pmodHelp" class="form-text text-muted">The weight in grams of the craft minus battery, gopro, etc" </small>
+</div>
+<div class="form-group">
+	<label for="source">Source</label>
+	  <input type="text" class="form-control" id="source" aria-describedby="srcHelp" placeholder="https://armattanquads.com/marmotte-5-dji-edition-with-toa-2306-1750kv-motors-ready-to-ship/">
+    	  <small id="pmodHelp" class="form-text text-muted">The link to the page where this data was found" </small>
+</div>
+<div class="form-group">
+	<button id="button1" class="btn btn-default btn-sm">Format</button>
 
-<input type="button" id="button1" value="Format"/>
+
 </form>
 </div>
 <pre id="output">
@@ -47,10 +123,10 @@ function make_json(form){
     for (var i = 0, element; element = elements[i++];) {
     if (element.type == "text" && element.value != ""){
     		if(!isNaN(element.value)){
-        json[element.name] = Number(element.value);
+        json[element.id] = Number(element.value);
         }
         else{
-        	json[element.name] = element.value;
+        	json[element.id] = element.value;
         }
     }
     }
