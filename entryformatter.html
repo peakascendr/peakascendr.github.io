@@ -123,19 +123,18 @@
 function make_json(form){
     var json={};
     
-    var elements = form.elements;
+    var elements = document.getElementsByClassName("form-control") ;
     
     for (var i = 0, element; element = elements[i++];) {
-    if (element.type == "text" && element.value != ""){
-    		if(!isNaN(element.value)){
-        json[element.id] = Number(element.value);
-        }
-        else{
-        	json[element.id] = element.value;
-        }
+	    if (element.value != ""){
+			if(!isNaN(element.value)){
+				json[element.id] = Number(element.value);
+			}
+			else{
+				json[element.id] = element.value;
+			}
+	    }
     }
-    }
-    
     var html = JSON.stringify(json,null,4);
     document.getElementById('output').innerHTML=html;
     return false;
