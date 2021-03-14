@@ -21,19 +21,19 @@
 <div class="col-8">
 <form id="data" onsubmit="return make_json(this); return false;" method="post">
 <div class="form-group">
-	  <label for="make">Make</label><small id="makeHelp" class="form-text text-muted">The manufacturer of the craft</small>
+	  <label for="make">Make</label>
 	  <input type="text" class="form-control" id="make" aria-describedby="makeHelp" placeholder="e.g BetaFPV,Armattan,GepRC,etc">
+	  <small id="makeHelp" class="form-text text-muted">The manufacturer of the craft</small>
     	  
 </div>
 <div class="form-group">	  
-	  <label for="model">Model</label><small id="modelHelp" class="form-text text-muted">The manufacturer of the craft</small>
+	  <label for="model">Model</label>
 	  <input type="text" class="form-control" id="model" aria-describedby="modelHelp" placeholder="e.g Gecko,BangGod,Cidora SL-5">
-    	  
+    	  <small id="modelHelp" class="form-text text-muted">The model name of the craft</small>
 </div>
 <div class="form-group">	  
 	  <label for="class">Class</label>
 	  <select id="class" class="custom-select">
-  		<option selected>Freestyle</option>
   		<option value="Whoop">Whoop</option>
   		<option value="Toothpick">Toothpick</option>
   		<option value="Freestyle">Freestyle</option>
@@ -47,7 +47,6 @@
 <div class="form-group">	 
 	  <label for="batt_v">Battery Size</label>
 	  <select id="batt_v" class="custom-select">
-  		<option selected>1S</option>
   		<option value="1S">1S</option>
   		<option value="2S">2S</option>
   		<option value="3S">3S</option>
@@ -65,23 +64,22 @@
 </div>
 <div class="form-group">	  
 	<label for="motor_sz">Motor Size</label>
-	  <input type="text" class="form-control" id="motor_sz" aria-describedby="mszHelp" placeholder="e.g 1105,2207,2306,etc">
+	  <input type="text" class="form-control" id="motor_sz" aria-describedby="mszHelp" placeholder="e.g 1105,2207,2306">
     	  <small id="mszHelp" class="form-text text-muted">The stator size of the motor</small> 
 </div>
 <div class="form-group">	
 	<label for="motor_kv">Motor KV</label>
-	  <input type="text" class="form-control" id="motor_kv" aria-describedby="mkvHelp" placeholder="e.g 2400,8000,16500,etc">
+	  <input type="text" class="form-control" id="motor_kv" aria-describedby="mkvHelp" placeholder="e.g 2400,8000,16500">
     	  <small id="mkvHelp" class="form-text text-muted">The KV (RPM per Volt) of the motor</small> 	  
 </div>
 <div class="form-group">	  
 	<label for="prop_diam">Prop Size</label>
-	  <input type="text" class="form-control" id="prop_diam" aria-describedby="pdiamHelp" placeholder='e.g 2",2.5",5",etc'>
+	  <input type="text" class="form-control" id="prop_diam" aria-describedby="pdiamHelp" placeholder='e.g 2",2.5",5"'>
     	  <small id="pdiamHelp" class="form-text text-muted">The general size of props</small> 
 </div>
 <div class="form-group">							    
 	  <label for="prop_blades">Prop Blades</label>
 	  <select id="prop_blades" class="custom-select">
-  		<option selected>3</option>
   		<option value="1">1</option>
   		<option value="2">2</option>
   		<option value="3">3</option>
@@ -92,13 +90,13 @@
 	  <small id="bladeHelp" class="form-text text-muted">The count of the blades on the prop</small> 							    
 </div>
 <div class="form-group">  	
-	<label for="prop_model">Prop Size</label>
-	  <input type="text" class="form-control" id="prop_model" aria-describedby="pmodHelp" placeholder="e.g 2020,5040,5042,etc">
-    	  <small id="pmodHelp" class="form-text text-muted">The 4 number of the prop (5042) equals 5.0"X4.2" </small>
+	<label for="prop_model">Prop Spec</label>
+	  <input type="text" class="form-control" id="prop_model" aria-describedby="pmodHelp" placeholder="e.g 2020,5040,5042">
+    	  <small id="pmodHelp" class="form-text text-muted">The spec of the prop e.g (5042) equals 5.0"X4.2" </small>
 </div>
 <div class="form-group">
 	<label for="dry_wgt_g">Dry Weight (g)</label>
-	  <input type="text" class="form-control" id="dry_wgt_g" aria-describedby="dwthelp" placeholder="e.g 200,493,505,etc">
+	  <input type="text" class="form-control" id="dry_wgt_g" aria-describedby="dwthelp" placeholder="e.g 200,493,505">
     	  <small id="dwtHelp" class="form-text text-muted">The weight in grams of the craft minus battery, gopro, etc" </small>
 </div>
 <div class="form-group">
