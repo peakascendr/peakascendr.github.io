@@ -19,12 +19,14 @@
 	<thead>
 		<tr>
 		<th>Model</th>
+		<th>Model</th>
 		<th>Class</th>
 		<th>Prop Diameter</th>
+		<th>Prop Model</th>
+		<th>Prop Blades</th>
 		<th>Motor Size</th>
 		<th>Motor KV</th>
 		<th>Battery Voltage</th>
-		<th>Battery mAh</th>
 		<th>Dry Weight (g)</th>	
 		<th>Source</th>
 		</tr>
@@ -42,19 +44,20 @@
 		url : "https://raw.githubusercontent.com/peakascendr/Motor_and_Prop_Data/main/MotorandPropData.json"
 	},
         columns: [
-            { data: 'Model' },
-            { data: 'Class' },
-		{ data : 'Prop diameter'},
-		{ data :'Motor size' },
-		 { data :'Motor kv' },
-		  { data :'Battery Voltage' },
-		{ data :'Battery mAh' },
-		{ data : 'Dry Weight (g)'},
-		{ data :'Source', "render": function ( data, type, row, meta ) {
+	    { data : 'make'},
+	    { data :'model' },
+	    { data: 'class' },
+	    { data :'prop_diam' },
+	    { data: 'prop_num' },
+	    { data :'prop_blades'},
+	    { data :'motor_sz' },
+	    { data :'motor_kv' },
+	    { data: 'batt_v' },		
+            { data: 'dry_wt_g' },
+	    { data :'source', "render": function ( data, type, row, meta ) {
       			return '<a href="'+data+'">source</a>';
-    			} 
-		}
-		
+    		} 
+	    }	
         ]
     });
 		
