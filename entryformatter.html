@@ -128,9 +128,6 @@
 function make_json(form){
     var json={};
     var elements = document.getElementsByClassName("form-control") ;
-    var selects = document.getElementsByClassName("custom-select") ;
-    elements.push(selects) ;
-    
     for (var i = 0, element; element = elements[i++];) {
 	    if (element.value != ""){
 			if(!isNaN(element.value)){
@@ -138,6 +135,17 @@ function make_json(form){
 			}
 			else{
 				json[element.id] = element.value;
+			}
+	    }
+    }
+    var selects = document.getElementsByClassName("custom-select") ;
+    for (var i = 0, select; select = selects[i++];) {
+	    if (select.value != ""){
+			if(!isNaN(select.value)){
+				json[select.id] = Number(select.value);
+			}
+			else{
+				json[select.id] = select.value;
 			}
 	    }
     }
