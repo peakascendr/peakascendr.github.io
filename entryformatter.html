@@ -7,16 +7,15 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src=""https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css"></script>
 </head>
 <body>
 	<div class="jumbotron text-center" style="margin-bottom:0">
   <h1>FPV Motor and Prop Data</h1>
   <p>Format data for submission </p> 
 </div>
-<form>
+<form id="data" onsubmit="return make_json(this); return false;" method="post">
 <div class="form-group">
-  <form id="data" onsubmit="return make_json(this); return false;" method="post">
 	  <label for="make">Make</label>
 	  <input type="text" class="form-control" id="make" aria-describedby="makeHelp" placeholder="e.g BetaFPV,Armattan,GepRC,etc">
     	  <small id="msgHelp" class="form-text text-muted">The manufacturer of the craft</small>
