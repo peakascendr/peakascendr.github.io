@@ -1,5 +1,3 @@
-# peak ascendr's githubio page content
-
 ## FPV Motor and Prop Data
 Inspired by Joshua Bardwell's google sheet of FPV RTF builds and their motor and propeller pairings
 
