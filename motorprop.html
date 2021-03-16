@@ -38,8 +38,23 @@
 </div>
 </body>
  <script>
-  $(document).ready(function(){	
-    $('#data').DataTable({
+ $(document).ready(function(){	
+      $('#data thead tr').clone(true).appendTo( '#data thead' );
+    $('#data thead tr:eq(1) th').each( function (i) {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Filter" />' );
+ 
+        $( 'input', this ).on( 'keyup change', function () {
+            if ( table.column(i).search() !== this.value ) {
+                table
+                    .column(i)
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
+ 
+    var table = $('#data').DataTable({
         ajax: {
 		url : "https://raw.githubusercontent.com/peakascendr/Motor_and_Prop_Data/main/MotorandPropData.json"
 	},
